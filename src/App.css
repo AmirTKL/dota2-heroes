@@ -1,3 +1,6 @@
+.hero-div {
+  text-transform: uppercase;
+}
 .hero-div-str {
   color: red;
 }
@@ -25,6 +28,10 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+}
+.hero-attack-type {
+  margin-bottom: 5px;
+  font-size: 14px;
 }
 .hero-roles {
   font-size: 10px;

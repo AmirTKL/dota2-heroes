@@ -31,10 +31,10 @@ function App() {
             <div className="card-info">
               <div>{hero.localized_name}</div>
               <div className="hero-roles">{hero.roles.join(" - ")}</div>
-              <div className={`hero-div-${hero.primary_attr}`}>
+              <div className={`hero-div hero-div-${hero.primary_attr}`}>
                 {hero.primary_attr}
               </div>
-              <div>{hero.attack_type}</div>
+              <div className="hero-attack-type">{hero.attack_type}</div>
               <div> <img alt={hero} src={"https://www.dotafire.com/images/icon_str.png"} /> {hero.base_str} <br />
                 <img alt={hero} src={"https://www.dotafire.com/images/icon_agi.png"} /> {hero.base_agi} <br />
                 <img alt={hero} src={"https://www.dotafire.com/images/icon_int.png"} /> {hero.base_int}
