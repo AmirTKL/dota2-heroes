@@ -4,6 +4,7 @@ import "./App.css"
 function App() {
   const [search, setSearch] = useState("")
   const [heroes, setHeroes] = useState([])
+  const [openHero, setOpenHero] = useState(null)
   useEffect(() => {
     fetcher()
   }, [])
@@ -26,7 +27,7 @@ function App() {
           {heroes.filter((hero) => {
             return hero.localized_name.toLowerCase().includes(search.toLowerCase())
           }).map((hero) => <div className={"hero-card"} key={hero.id}>
-            <img alt={hero}
+            <img alt={hero.localized_name}
               src={"https://api.opendota.com" + hero.icon} />
             <div className="card-info">
               <div>{hero.localized_name}</div>
@@ -38,6 +39,11 @@ function App() {
               <div> <img alt={hero} src={"https://www.dotafire.com/images/icon_str.png"} /> {hero.base_str} <br />
                 <img alt={hero} src={"https://www.dotafire.com/images/icon_agi.png"} /> {hero.base_agi} <br />
                 <img alt={hero} src={"https://www.dotafire.com/images/icon_int.png"} /> {hero.base_int}
+                <button className="more-btn" onClick={() => setOpenHero(hero.id === openHero ? null : hero.id)}>{openHero === hero.id ? "Close" : "More..."}</button>
+                <div className="more-information" style={{ display: openHero === hero.id ? '' : 'none' }}>
+                  <div>Attack Range: {hero.attack_range}</div>
+                  <img className="more-information-img" alt={hero.localized_name} src={"https://api.opendota.com" + hero.img} />
+                </div>
               </div>
             </div>
           </div>)}

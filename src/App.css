@@ -33,6 +33,20 @@
   margin-bottom: 5px;
   font-size: 14px;
 }
+.more-btn {
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  display: flex;
+  justify-content: flex-start;
+}
+.more-information {
+  font-size: 10px;
+}
+.more-information-img {
+  max-width: 100px;
+  max-height: 100px;
+}
 .hero-roles {
   font-size: 10px;
 }
